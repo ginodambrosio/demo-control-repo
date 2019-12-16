@@ -1,0 +1,46 @@
+---
+profile::linux::dns_resolver::name_servers: 
+  - '8.8.8.8'
+  - '8.8.4.4'
+
+profile::linux::dns_resolver::search_path: 
+  - 'puppet.com'
+
+profile::linux::login_banner::banner_content: "\n
+\t\t\t !!  Warning  !! \n
+================================================================================ \n
+Information stored or processed on this system is the property of Puppet\n
+================================================================================ \n
+\n
+"
+
+profile::linux::qualys::activation_id: ''
+profile::linux::qualys::customer_id: ''
+
+profile::linux::hosts::base_hosts:
+  'puppet.local':
+    ensure: present
+    comment: 'Puppet Master'
+    ip: 192.168.2.2
+    host_aliases: ['puppet','pemaster.local']
+  'gitlab.local':
+    ensure: present
+    comment: 'Gitlab server'
+    ip: 192.168.2.3
+    host_aliases: ['gitlab','cd4pe']
+
+accounts::group_defaults:
+  system: true
+accounts::group_list:
+  admin_users: {}
+accounts::user_defaults:
+  groups: [ 'users' ]
+  managehome: true
+  system:     false
+accounts::user_list:
+  demoadmin: 
+    groups: ['admin_users', 'users']
+    password: ''
+  demouser: 
+    groups: ['users']
+    password: ''
