@@ -2,14 +2,18 @@ forge 'https://forge.puppet.com'
 #
 # Modules from the Puppet Forge
 #
-mod 'puppetlabs/stdlib',  '6.1.0'
+mod 'puppetlabs-cd4pe',  :latest
+mod 'puppetlabs-stdlib',  '6.1.0'
 mod 'puppetlabs-translate', '2.0.0'
-mod 'puppetlabs/concat',  '6.1.0'
+mod 'puppetlabs-concat',  '6.1.0'
+mod 'puppetlabs-hocon',  '1.1.0'
+mod 'puppetlabs-puppet_authorization',  '0.5.0'
+mod 'puppetlabs-docker',  '3.9.0'
 mod 'puppetlabs-cron_core', '1.0.2'
 mod 'puppetlabs-postgresql', '6.2.0'
 mod 'npwalker-pe_databases', '0.15.0'
 mod 'puppetlabs-apt', '7.1.0'
-mod 'puppetlabs-yum', '4.0.0'
+mod 'puppet-yum', '4.0.0'
 mod 'puppetlabs-ntp', '8.1.0'
 mod 'saz-resolv_conf', '4.1.0'
 mod 'puppetlabs-motd', '3.1.0'
