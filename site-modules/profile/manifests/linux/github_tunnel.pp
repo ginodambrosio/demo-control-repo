@@ -1,7 +1,9 @@
 # Uses the gabe-ngrok forge module to make a tunnel for CD4PE webhook.
-class profile::linux::github_tunnel {
+class profile::linux::github_tunnel (
+  String $ngrok_authtoken,
+) {
   class { 'ngrok':
-    authtoken => '84fAzMWrconh6dpfd1kRb_3DBPbRkWkNPYjiBNQUYYQ',
+    authtoken => $ngrok_authtoken,
   }
   ngrok::tunnel { 'cd4pe':
     proto => 'tcp',
